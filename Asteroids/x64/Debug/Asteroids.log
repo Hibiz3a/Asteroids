@@ -1,0 +1,7 @@
+﻿  init.c
+C:\Users\rayna\Documents\cours\Asteroids\init.c(15,38): warning C4133: 'fonction' : types incompatibles - de 'wnd *' à 'sfRenderWindow *'
+  mian.c
+  sprite.c
+  Génération de code en cours...
+C:\Users\rayna\Documents\cours\Asteroids\sprite.c(19): warning C4716: 'Sprite_Ship_Move' : doit retourner une valeur
+  Asteroids.vcxproj -> C:\Users\rayna\Documents\cours\Asteroids\x64\Debug\Asteroids.exe
