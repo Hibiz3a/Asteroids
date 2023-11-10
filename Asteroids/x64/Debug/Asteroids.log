@@ -1,7 +1,15 @@
 ﻿  init.c
-C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(19,41): warning C4090: 'fonction' : qualificateurs 'const' différents
-C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(21,42): warning C4090: 'fonction' : qualificateurs 'const' différents
-  mian.c
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(24,55): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(24,79): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(25,41): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(26,42): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(27,40): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(28,42): warning C4090: 'fonction' : qualificateurs 'const' différents
   sprite.c
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\sprite.c(16,49): warning C4244: 'fonction' : conversion de 'double' en 'float', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\sprite.c(17,49): warning C4244: 'fonction' : conversion de 'double' en 'float', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\sprite.c(21,38): warning C4244: '=' : conversion de 'double' en 'float', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\sprite.c(26,41): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\sprite.c(31,41): warning C4090: 'fonction' : qualificateurs 'const' différents
   Génération de code en cours...
   Asteroids.vcxproj -> C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\x64\Debug\Asteroids.exe

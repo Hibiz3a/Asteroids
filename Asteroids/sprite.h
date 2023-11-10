@@ -7,10 +7,13 @@
 
 typedef struct SpriteShip SpriteShip;
 struct SpriteShip
-{
-   const sfSprite* shipsprite;
+{   
+    float rotation;
+    sfVector2f direction;
+    const sfSprite* shipsprite;
     sfTexture* shipTexture;
     sfVector2f Locate;
+    float speedship;
 };
 
 #endif // SPRITE_H

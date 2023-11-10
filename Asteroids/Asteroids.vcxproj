@@ -136,6 +136,7 @@
     <ClCompile Include="init.c" />
     <ClCompile Include="mian.c" />
     <ClCompile Include="sprite.c" />
+    <ClCompile Include="variable.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="init.h" />
