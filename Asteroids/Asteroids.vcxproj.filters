@@ -27,6 +27,12 @@
     <ClCompile Include="variable.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="asteroids.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="asteroid.h">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sprite.h">

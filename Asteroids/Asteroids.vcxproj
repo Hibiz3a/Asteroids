@@ -133,6 +133,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="asteroid.h" />
+    <ClCompile Include="asteroids.c" />
     <ClCompile Include="init.c" />
     <ClCompile Include="mian.c" />
     <ClCompile Include="sprite.c" />
