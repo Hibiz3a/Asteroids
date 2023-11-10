@@ -6,29 +6,34 @@
 #include <stdio.h>
 #include "ref.h"
 
-void init(wnd* wnd) {
+
+void init(window* wnd, SpriteShip* sprs) {
     wnd->wnd_size_height = 1920;
     wnd->wnd_size_width = 1080;
-
+    
     sfVideoMode mode = { wnd->wnd_size_height, wnd->wnd_size_width, 32 };
-    sfRenderWindow* wndO = sfRenderWindow_create(mode, "Asteroid", sfResize | sfClose, NULL);
-    sfRenderWindow_setFramerateLimit(wnd, 60);
+    wnd->wndO = sfRenderWindow_create(mode, "Asteroid", sfResize | sfClose, NULL);
+    sfRenderWindow_setFramerateLimit(wnd->wndO, 60);
+    sprs->shipTexture = sfTexture_createFromFile("texture/spaceship.png", NULL);
+    sprs->shipsprite = sfSprite_create();
+    sfSprite_setTexture(sprs->shipsprite, sprs->shipTexture, sfFalse);
+    sprs->Locate = (sfVector2f){ 0,0 };
+    sfSprite_setPosition(sprs->shipsprite, sprs->Locate);
 
-
-    while (sfRenderWindow_isOpen(wndO)) {
+    while (sfRenderWindow_isOpen(wnd->wndO)) {
         sfEvent event;
-        sfRenderWindow_clear(wndO, sfBlack);
-        sfRenderWindow_display(wndO);
-        Create_Sprite_Ship();
+        sfRenderWindow_clear(wnd->wndO, sfBlack);
+       
 
+        sfRenderWindow_drawSprite(wnd->wndO, sprs->shipsprite, NULL);
 
-        if (sfRenderWindow_pollEvent(wndO, &event)) {
+        if (sfRenderWindow_pollEvent(wnd->wndO, &event)) {
             if (event.type == sfEvtClosed)
-                sfRenderWindow_close(wndO);
+                sfRenderWindow_close(wnd->wndO);
         }
-
+         sfRenderWindow_display(wnd->wndO);
     }
 
-    sfRenderWindow_destroy(wndO);
+    sfRenderWindow_destroy(wnd->wndO);
 
 }

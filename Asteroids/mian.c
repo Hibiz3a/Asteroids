@@ -2,7 +2,8 @@
 #include "ref.h"
 
 int main() {
-    wnd wnd;
+    window w;
+    SpriteShip s;
 
-    init(&wnd);
+    init(&w,&s); 
 }
