@@ -6,29 +6,24 @@
 #include <stdio.h>
 #include "ref.h"
 
-void init(wnd* wnd) {
-    wnd->wnd_size_height = 1920;
-    wnd->wnd_size_width = 1080;
 
+void init(window* wnd, SpriteShip* sprs) 
+{
+    ///////////////////////////////////////////////////////////////////
+    ////                        Window create                      ////
+    ///////////////////////////////////////////////////////////////////
     sfVideoMode mode = { wnd->wnd_size_height, wnd->wnd_size_width, 32 };
-    sfRenderWindow* wndO = sfRenderWindow_create(mode, "Asteroid", sfResize | sfClose, NULL);
-    sfRenderWindow_setFramerateLimit(wnd, 60);
+    wnd->wndO = sfRenderWindow_create(mode, "Asteroid", sfResize | sfClose, NULL);
+    sfRenderWindow_setFramerateLimit(wnd->wndO, 60);
 
-
-    while (sfRenderWindow_isOpen(wndO)) {
-        sfEvent event;
-        sfRenderWindow_clear(wndO, sfBlack);
-        sfRenderWindow_display(wndO);
-        Create_Sprite_Ship();
-
-
-        if (sfRenderWindow_pollEvent(wndO, &event)) {
-            if (event.type == sfEvtClosed)
-                sfRenderWindow_close(wndO);
-        }
-
-    }
-
-    sfRenderWindow_destroy(wndO);
-
+////////////////////////////////////////////////////////////////////////////////////////
+    //Sprite ship create
+////////////////////////////////////////////////////////////////////////////////////////
+    sprs->shipTexture = sfTexture_createFromFile("texture/spaceship.png", NULL);
+    sprs->shipsprite = sfSprite_create();
+    sprs->Locate = (sfVector2f){ wnd->wnd_size_height / 2,wnd->wnd_size_width / 2 };
+    sfSprite_setTexture(sprs->shipsprite, sprs->shipTexture, sfFalse);
+    sfSprite_setPosition(sprs->shipsprite, sprs->Locate);
+    sfSprite_setOrigin(sprs->shipsprite, (sfVector2f){32,32});
+    sfSprite_setRotation(sprs->shipsprite, sprs->rotation);
 }

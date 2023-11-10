@@ -24,6 +24,9 @@
     <ClCompile Include="init.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="variable.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sprite.h">

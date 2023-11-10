@@ -5,11 +5,15 @@
 #ifndef SPRITE_H
 #define SPRITE_H
 
-typedef struct SpriteShip
-{
-    sfSprite* shipsprite;
+typedef struct SpriteShip SpriteShip;
+struct SpriteShip
+{   
+    float rotation;
+    sfVector2f direction;
+    const sfSprite* shipsprite;
     sfTexture* shipTexture;
     sfVector2f Locate;
-}SpriteShip;
+    float speedship;
+};
 
 #endif // SPRITE_H
