@@ -7,8 +7,9 @@
 #include "ref.h"
 
 
-void init(window* wnd, SpriteShip* sprs) 
+void init(window* wnd, SpriteShip* sprs, asteroid* ast) 
 {
+    srand(time(NULL));
     ///////////////////////////////////////////////////////////////////
     ////                        Window create                      ////
     ///////////////////////////////////////////////////////////////////
@@ -21,9 +22,10 @@ void init(window* wnd, SpriteShip* sprs)
 ////////////////////////////////////////////////////////////////////////////////////////
     sprs->shipTexture = sfTexture_createFromFile("texture/spaceship.png", NULL);
     sprs->shipsprite = sfSprite_create();
-    sprs->Locate = (sfVector2f){ wnd->wnd_size_height / 2,wnd->wnd_size_width / 2 };
+   
     sfSprite_setTexture(sprs->shipsprite, sprs->shipTexture, sfFalse);
     sfSprite_setPosition(sprs->shipsprite, sprs->Locate);
     sfSprite_setOrigin(sprs->shipsprite, (sfVector2f){32,32});
     sfSprite_setRotation(sprs->shipsprite, sprs->rotation);
+////////////////////////////////////////////////////////////////////////////////////////
 }

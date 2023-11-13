@@ -14,6 +14,11 @@ struct SpriteShip
     sfTexture* shipTexture;
     sfVector2f Locate;
     float speedship;
-};
 
+};
+typedef struct Death Death;
+struct Death
+{
+    int death;
+};
 #endif // SPRITE_H

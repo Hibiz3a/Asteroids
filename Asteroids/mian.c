@@ -3,24 +3,30 @@
 #include <stdio.h>
 #include "ref.h"
 
+
+
 int main() {
     window w;
     SpriteShip s;
     asteroid a;
-    variable_init(&w, &s, &a);
-    init(&w,&s); 
-     
-    sfSprite* asteroid = Asteroid_Create_Sprite("texture/asteroid.png", -100.0f, 300.0f,&a);
+    Death d;
+    variable_init(&w, &s, &a,&d);
+    init(&w,&s, &a); 
+
+    initAsteroid(&a);
+
 
 
     while (sfRenderWindow_isOpen(w.wndO)) {
         sfEvent event;
         sfRenderWindow_clear(w.wndO, sfBlack);
-        Sprite_Move_ship(&s);
-        asteroid_pos(&a, &w);
+        Sprite_Move_ship(&s, &d);
+        return_map_ship(&s,&w);
 
-        sfSprite_setPosition(asteroid, a.asteroidpos);
-        sfRenderWindow_drawSprite(w.wndO, asteroid, NULL);
+        asteroid_move(&a);
+
+        sfSprite_setPosition(a.asteroidSprite, a.asteroidpos);
+        sfRenderWindow_drawSprite(w.wndO, a.asteroidSprite, NULL);
 
 
         sfSprite_setPosition(s.shipsprite, s.Locate);
