@@ -2,41 +2,65 @@
 #include <SFML/Window.h>
 #include <SFML/Audio.h>
 #include <SFML/System.h>
-#include "ref.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include "ref.h"
+#include <math.h>
+#include <stdbool.h>
+#include <time.h>
 
-////////////////////////////////////////////////////////////////////////////////////////
-    //Sprite asteroid create
-////////////////////////////////////////////////////////////////////////////////////////
-void initAsteroid(asteroid* ast) {
-    ast->asteroidSprite = sfSprite_create();
-    ast->asteroidTexture =  sfTexture_createFromFile("texture/asteroid.png", NULL);
-    sfSprite_setTexture(ast->asteroidSprite, ast->asteroidTexture, sfTrue);
-
-    // Position initiale en dehors de la fenêtre
-    ast->asteroidpos.x = -100.0f;
-    ast->asteroidpos.y = -100.0f;
-    sfSprite_setPosition(ast->asteroidSprite, ast->asteroidpos);
+float random(int min, int max)
+{
+    return (float)(rand() % (max + 1 - min)) + min;
 }
-////////////////////////////////////////////////////////////////////////////////////////
+void initasteroid(Asteroid* ast, int i, float scale) {
+    ast->asteroids[i].asteroidSprite = sfSprite_create();
+    ast->asteroids[i].asteroidTexture = sfTexture_createFromFile("texture/asteroid.png", NULL);
+    ast->asteroids[i].asteroidpos.x = random(0, 1920);
+    ast->asteroids[i].asteroidpos.y = random(0, 1080); 
+    sfSprite_setTexture(ast->asteroids[i].asteroidSprite, ast->asteroids[i].asteroidTexture, sfFalse);
+    sfSprite_setOrigin(ast->asteroids[i].asteroidSprite, (sfVector2f){16, 16});
+    sfSprite_setPosition(ast->asteroids[i].asteroidSprite, ast->asteroids[i].asteroidpos);
+    sfSprite_setScale(ast->asteroids[i].asteroidSprite, (sfVector2f){scale, scale});
+    ast->asteroids[i].orientation = random(0, 360);
 
-void return_map_asteroid(asteroid* ast, window* wnd) {
-	if (ast->asteroidpos.x < 0) {
-		ast->asteroidpos.x = wnd->wnd_size_height;
-	}
-	if (ast->asteroidpos.y < 0) {
-		ast->asteroidpos.y = wnd->wnd_size_width;
-	}
-	if (ast->asteroidpos.x > wnd->wnd_size_height) {
-		ast->asteroidpos.x = -5;
-	}
-	if (ast->asteroidpos.y > wnd->wnd_size_width) {
-		ast->asteroidpos.y = -5;
-	}
 }
 
-void asteroid_move(asteroid* ast) {
-	ast->asteroidpos.x = ast->asteroidpos.x + 1;
-	ast->asteroidpos.y = ast->asteroidpos.y + 1;
+
+
+
+void asteroidmove(Asteroid* ast, int i) {
+    ast->asteroids[i].asteroidpos.x += cosf(ast->asteroids->orientation * 3.14159265 / 180) * ast->asteroids[i].asteroidspeed.x;
+    ast->asteroids[i].asteroidpos.y += sinf(ast->asteroids->orientation * 3.14159265 / 180) * ast->asteroids[i].asteroidspeed.y;
+    sfSprite_setPosition(ast->asteroids[i].asteroidSprite, ast->asteroids[i].asteroidpos); 
+
 }
+
+
+
+void wrap_around(Asteroid* ast, int i) {
+    float windowWidth = 2020; 
+    float windowHeight = 1180; 
+
+    if (ast->asteroids[i].asteroidpos.x > windowWidth) {
+        ast->asteroids[i].asteroidpos.x = -100.0f;
+        ast->asteroids[i].asteroidspeed.x = random(2, 5);
+        ast->asteroids[i].asteroidspeed.y = random(2, 5);
+    }
+    else if (ast->asteroids[i].asteroidpos.x < -100.0f) {
+        ast->asteroids[i].asteroidpos.x = windowWidth;
+        ast->asteroids[i].asteroidspeed.x = random(2, 5);
+        ast->asteroids[i].asteroidspeed.y = random(2, 5);
+    }
+
+    if (ast->asteroids[i].asteroidpos.y > windowHeight) {
+        ast->asteroids[i].asteroidpos.y = -100.0f;
+        ast->asteroids[i].asteroidspeed.x = random(2, 5);
+        ast->asteroids[i].asteroidspeed.y = random(2, 5);
+    }
+    else if (ast->asteroids[i].asteroidpos.y < -100.0f) {
+        ast->asteroids[i].asteroidpos.y = windowHeight;
+        ast->asteroids[i].asteroidspeed.x = random(2, 5);
+        ast->asteroids[i].asteroidspeed.y = random(2, 5);
+    }
+}
+

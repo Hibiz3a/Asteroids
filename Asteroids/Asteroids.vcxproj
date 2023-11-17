@@ -137,11 +137,13 @@
     <ClCompile Include="asteroids.c" />
     <ClCompile Include="init.c" />
     <ClCompile Include="mian.c" />
+    <ClCompile Include="projectiles.c" />
     <ClCompile Include="sprite.c" />
     <ClCompile Include="variable.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="init.h" />
+    <ClInclude Include="projectiles.h" />
     <ClInclude Include="ref.h" />
     <ClInclude Include="sprite.h" />
   </ItemGroup>

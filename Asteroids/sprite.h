@@ -7,18 +7,19 @@
 
 typedef struct SpriteShip SpriteShip;
 struct SpriteShip
-{   
-    float rotation;
-    sfVector2f direction;
-    const sfSprite* shipsprite;
-    sfTexture* shipTexture;
-    sfVector2f Locate;
-    float speedship;
+{
+	float rotation;
+	sfVector2f direction;
+	const sfSprite* shipsprite;
+	sfTexture* shipTexture;
+	sfVector2f Locate;
+	float speedship;
 
 };
 typedef struct Death Death;
 struct Death
 {
-    int death;
+	int death;
+	int asteroidexplode;
 };
 #endif // SPRITE_H

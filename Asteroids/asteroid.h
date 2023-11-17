@@ -10,6 +10,16 @@ struct asteroid
 	sfTexture* asteroidTexture;
 	sfSprite* asteroidSprite;
 	sfVector2f asteroidpos;
-	float asteroidspeed;
+	sfVector2f asteroidspeed;
+	float taille;
+	int orientation;
+	
+};
+
+typedef struct Asteroid Asteroid;
+struct Asteroid
+{
+	asteroid asteroids[50];
+	int tailleliste;
 };
 #endif // !ASTEROID_H
