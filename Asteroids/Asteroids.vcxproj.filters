@@ -27,6 +27,18 @@
     <ClCompile Include="variable.c">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
+    <ClCompile Include="asteroids.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="asteroid.h">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="projectiles.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
+    <ClCompile Include="screen.c">
+      <Filter>Fichiers sources</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sprite.h">
@@ -36,6 +48,12 @@
       <Filter>Fichiers sources</Filter>
     </ClInclude>
     <ClInclude Include="ref.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="projectiles.h">
+      <Filter>Fichiers sources</Filter>
+    </ClInclude>
+    <ClInclude Include="screen.h">
       <Filter>Fichiers sources</Filter>
     </ClInclude>
   </ItemGroup>
