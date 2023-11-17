@@ -10,6 +10,8 @@ struct window
 	int wnd_size_width;
 	int wnd_size_height;
 	sfRenderWindow* wndO;
+	sfVideoMode mode;
+
 };
 
 #endif // INIT_H

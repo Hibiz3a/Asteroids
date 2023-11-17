@@ -1,12 +1,33 @@
 ﻿  asteroids.c
 C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\asteroids.c(13,20): warning C4013: 'rand' non défini(e) ; extern retournant int pris par défaut
-C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\asteroids.c(24,37): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\asteroids.c(27,37): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
 C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\asteroids.c(32,86): warning C4244: 'fonction' : conversion de 'double' en 'float', perte possible de données
 C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\asteroids.c(33,86): warning C4244: 'fonction' : conversion de 'double' en 'float', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\asteroids.c(46,41): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\asteroids.c(52,41): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\asteroids.c(59,41): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\asteroids.c(65,41): warning C4244: '=' : conversion de 'float' en 'int', perte possible de données
+  init.c
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(23,38): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(24,39): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(25,39): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\init.c(26,37): warning C4090: 'fonction' : qualificateurs 'const' différents
   mian.c
-C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\mian.c(42,42): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\mian.c(68,46): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\mian.c(89,69): warning C4244: 'fonction' : conversion de 'double' en 'float', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\mian.c(90,69): warning C4244: 'fonction' : conversion de 'double' en 'float', perte possible de données
   projectiles.c
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\projectiles.c(44,24): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
 C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\projectiles.c(47,24): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
-C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\projectiles.c(50,24): warning C4244: '=' : conversion de 'int' en 'float', perte possible de données
+  screen.c
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\screen.c(81,5): warning C4013: 'snprintf' non défini(e) ; extern retournant int pris par défaut
+  sprite.c
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\sprite.c(26,41): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\sprite.c(31,41): warning C4090: 'fonction' : qualificateurs 'const' différents
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\sprite.c(61,11): warning C4101: 'a' : variable locale non référencée
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\sprite.c(62,13): warning C4101: 's' : variable locale non référencée
+  variable.c
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\variable.c(13,52): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
+C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\variable.c(13,76): warning C4244: 'initialisation' : conversion de 'int' en 'float', perte possible de données
   Génération de code en cours...
   Asteroids.vcxproj -> C:\Users\rayna\Documents\Lahorde\quete n°3\github\Asteroids\Asteroids\x64\Debug\Asteroids.exe

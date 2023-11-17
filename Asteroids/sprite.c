@@ -55,3 +55,14 @@ void return_map_ship(SpriteShip* sprs, window* wnd) {
 	}
 }
 
+
+
+void sprite_ship_death(SpriteShip* sprs, Death* dt, int i, Asteroid* ast) {
+	asteroid a;
+	SpriteShip s;
+	sfFloatRect SpriteBounds = sfSprite_getGlobalBounds(sprs->shipsprite);
+	sfFloatRect AsteroidsBounds = sfSprite_getGlobalBounds(ast->asteroids[i].asteroidSprite);
+	if (sfFloatRect_intersects(&SpriteBounds, &AsteroidsBounds, NULL)) {
+		dt->death = 1;
+	}
+}

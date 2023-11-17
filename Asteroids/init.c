@@ -12,9 +12,7 @@ void init(window* wnd, SpriteShip* sprs, asteroid* ast)
 	///////////////////////////////////////////////////////////////////
 	////                        Window create                      ////
 	///////////////////////////////////////////////////////////////////
-	sfVideoMode mode = { wnd->wnd_size_height, wnd->wnd_size_width, 32 };
-	wnd->wndO = sfRenderWindow_create(mode, "Asteroid", sfResize | sfClose, NULL);
-	sfRenderWindow_setFramerateLimit(wnd->wndO, 60);
+
 
 	////////////////////////////////////////////////////////////////////////////////////////
 		//Sprite ship create

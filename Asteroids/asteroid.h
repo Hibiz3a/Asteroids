@@ -21,5 +21,6 @@ struct Asteroid
 {
 	asteroid asteroids[50];
 	int tailleliste;
+	int tailleliste2;
 };
 #endif // !ASTEROID_H

@@ -19,18 +19,15 @@ void Laser_create(laser* las, SpriteShip* sprs) {
 
 void move_laser(laser* las, SpriteShip* sprs,Death* dt) {
 	if (dt->death == 0) {
-		las->laserPos.x = sprs->Locate.x;
-		las->laserPos.y = sprs->Locate.y;
 		las->laserspeer = 10;
 		if (las->shoot == 0) {
 			if (sfKeyboard_isKeyPressed(sfKeySpace)) {
+				Laser_create(las, sprs);
 				las->rotation = sprs->rotation;
 				las->shoot = 1;
-				las->laserPos.x += las->laserspeer;
-				las->laserPos.y += las->laserspeer;
 				sfSprite_setRotation(las->spritelaser, las->rotation);
-				printf("true");
 			}
+			
 		}
 		float dx = sprs->Locate.x - las->laserPos.x;
 		float dy = sprs->Locate.y - las->laserPos.y;
@@ -56,5 +53,29 @@ void return_map_laser(laser* las, window* wnd) {
 		las->laserPos.y = -5;
 	}
 }
+void destroyAsteroid(Asteroid* ast, int index) {
+	for (int j = index; j < ast->tailleliste - 1; ++j) {
+		ast->asteroids[j] = ast->asteroids[j + 1];
+	}
+	ast->tailleliste--;
+}
 
+void colliderprojectiles(laser* las, Asteroid* ast, int i, score* scr) {
+	if (las->shoot == 1) {
+		sfFloatRect laserbounds = sfSprite_getGlobalBounds(las->spritelaser);
+		sfFloatRect asteroidbounds = sfSprite_getGlobalBounds(ast->asteroids[i].asteroidSprite);
 
+		if (sfFloatRect_intersects(&asteroidbounds, &laserbounds, NULL)) {
+			las->shoot = 0;
+			scr->score += 100;
+			ast->asteroids[i].taille = ast->asteroids[i].taille / 2;
+			sfSprite_setScale(ast->asteroids[i].asteroidSprite, (sfVector2f) { ast->asteroids[i].taille, ast->asteroids[i].taille });
+
+			if (ast->asteroids[i].taille < 2) {
+				destroyAsteroid(ast, i);
+				scr->score = scr->score + 200;
+
+			}
+		}
+	}
+}

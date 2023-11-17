@@ -22,4 +22,10 @@ struct Death
 	int death;
 	int asteroidexplode;
 };
+typedef struct score score;
+struct score
+{
+	int score;
+	sfText* scoretext;
+};
 #endif // SPRITE_H
